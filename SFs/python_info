@@ -33,4 +33,5 @@ Verify install:
 $ ~ pip3 -V
 pip 10.0.1 from /usr/local/lib/python3.6/site-packages/pip (python 3.6)
 
-6. 
+6. python 多版本切换
+https://blog.csdn.net/lzp_k2/article/details/88792587

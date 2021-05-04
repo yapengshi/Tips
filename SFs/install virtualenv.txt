@@ -1,0 +1,41 @@
+Ubuntu16.04安装Python虚拟环境:
+
+1、安装前的准备，拿到腾讯云Ubuntu16.04主机后，首先是用root用户登录，在上一篇文章中已经介绍了腾讯云Ubuntu主机设置root用户登录，然后检查是否装有pip和pip3，执行命令，
+[bash]
+pip -V
+pip3 -V
+---
+
+如果提示没有，就执行命令，
+[bash]
+apt install python-pip
+apt install python3-pip
+---
+
+2、安装Python虚拟环境的virtualenv，执行命令，
+[bash]
+apt install python-virtualenv
+---
+这里说一下，其实执行apt install python-virtualenv命令的同时会执行apt install python3-virtualenv，所以只需执行apt install python-virtualenv，即可安装python-virtualenv和python3-virtualenv。
+
+3、安装virtualwrapper，virtualwrapper是一个简单方便的管理Python虚拟环境的工具，执行命令，
+[bash]
+pip3 install pbr 
+pip3 install virtualenvwrapper
+---
+[Notice]　安装virtualwrapper没成功，virtualenvwrapper.sh位置不在/usr/local/bin/而是 ~/.local/bin
+但修改后仍无法初始化.sh文件
+
+4、配置virtualwrapper的环境变量，vim打开~/.bashrc，执行命令，
+
+按Shift + g到达文本最后，加入以下内容，
+---
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+# 虚拟环境存储的目录
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+---
+
+再执行命令，
+
+source ~/.bashrc

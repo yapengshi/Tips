@@ -1,0 +1,10 @@
+1. 查看ubuntu中安装的python路径:
+which python  # whereis python
+
+2. 查看python version:
+python --version  # python -V
+
+
+3. 基于单个用户修改Python版本_切换python2/3:
+alias python='/usr/bin/python3'
+alias python='/usr/bin/python2'
